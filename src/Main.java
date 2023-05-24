@@ -3,45 +3,6 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.util.Scanner;
 
-//
-//public class Main {
-//    public static void main(String[] args) {
-//        Chatbot chatbot = new Chatbot();
-//        try {
-//            String filePathJokes = "resources/jokes.txt";
-//            String filePathAdvices = "resources/advices.txt";
-//            String currentDir = System.getProperty("user.dir");
-//            System.out.println("Current Directory: " + currentDir);
-//            String fullPathJokes = currentDir + "/" + filePathJokes;
-//            String fullPathAdvices = currentDir + "/" + filePathAdvices;
-//            chatbot.loadJokesFromFile(fullPathJokes);
-//            chatbot.loadAdvicesFromFile(fullPathAdvices);
-//        } catch (IOException e) {
-//            System.out.println("Error loading data from file.");
-//        }
-//
-//        Scanner scanner = new Scanner(System.in);
-//        String input;
-//
-//        do {
-//            System.out.print("Choose an option (joke, advice, quit): ");
-//            input = scanner.nextLine().trim();
-//
-//
-//            if (input.equalsIgnoreCase("joke")) {
-//                String joke = chatbot.getRandomJoke();
-//                System.out.println(joke);
-//            } else if (input.equalsIgnoreCase("advice")) {
-//                String advice = chatbot.getRandomAdvice();
-//                System.out.println(advice);
-//            } else if (!input.equalsIgnoreCase("quit")) {
-//                System.out.println("Invalid option. Try again.");
-//            }
-//        } while (!input.equalsIgnoreCase("quit"));
-//
-//        System.out.println("Goodbye!");
-//    }
-//}
 public class Main {
     public static void main(String[] args) {
         Chatbot chatbot = new Chatbot();
@@ -61,6 +22,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         String input;
+        String name;
+
+        System.out.print("Hi, Good day to you! What is your name? ");
+        name = scanner.nextLine().trim();
+        System.out.println("Hello " + name + "! I am Vinnie the bot.");
 
         do {
             System.out.print("Choose an option (joke, advice, quiz, quit): ");
@@ -81,7 +47,7 @@ public class Main {
                     System.out.println("Please provide the answer:");
                     answer = scanner.nextLine().trim();
                     chatbot.saveQuizAnswer(question, answer);
-                    System.out.println("Thank you! Your answer has been saved.");
+                    System.out.println("Thank you! Your answer has been saved. I will remember it next time");
                 } else {
                     System.out.println(answer);
                 }
