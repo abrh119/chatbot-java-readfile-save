@@ -24,3 +24,5 @@ what is the pi expression?
 22/7
 what is the president of sri lanka?
 ranil
+what is the formula of water?
+h20
