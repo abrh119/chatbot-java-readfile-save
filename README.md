@@ -1,14 +1,37 @@
+# Java Chatbot Project
 
-## Java Chatbot Project
+This Java Chatbot project demonstrates a simple chatbot application that utilizes object-oriented programming (OOP) concepts to provide jokes, advice, and a quiz feature. The chatbot interacts with the user through the command line interface.
 
-The project is a Java-based chatbot with multiple functionalities. The chatbot interacts with the user through a console interface and offers three options: "joke", "advice", and "quiz".
+## Features
 
-1. **Joke**: When the user selects the "joke" option, the chatbot fetches a random joke from a text file called "jokes.txt". If the file is empty or not found, the chatbot responds with "No jokes available."
+- Jokes: The chatbot, implemented in the `Chatbot` class, encapsulates the functionality of loading jokes from a file and generating random joke responses. It demonstrates the use of encapsulation and abstraction in OOP.
+- Advice: The `Chatbot` class also handles the loading of advice data and generating random advice responses. The separation of concerns showcases the principle of modularity in OOP.
+- Quiz: The `Chatbot` class includes a quiz feature that allows users to ask questions and receive answers. If the chatbot doesn't know the answer, it prompts the user to provide it and saves it for future reference. This demonstrates the use of inheritance and polymorphism in OOP, as the `Quiz` class extends the functionality of the `Chatbot` class.
 
-2. **Advice**: If the user selects the "advice" option, the chatbot retrieves a random advice from a text file named "advices.txt". Similarly, if the file is empty or not found, the chatbot responds with "No advice available."
+The project also utilizes other classes:
+- `WordChecker`: This class, following the principles of encapsulation and abstraction, checks if user input contains keywords from a file and triggers a joke response. It showcases the power of OOP in modularizing and reusing code.
+- `QuoteChecker`: Similar to `WordChecker`, this class checks user input for keywords and triggers an advice response.
 
-3. **Quiz**: In the "quiz" option, the chatbot allows the user to ask a question. The chatbot checks if the question exists in a text file called "quiz.txt", which contains pre-defined question-answer pairs. If the question exists, the chatbot provides the corresponding answer. However, if the question is not found, the chatbot asks the user to provide the answer and saves the question-answer pair in the "quiz.txt" file for future reference.
+To run the project, make sure to place the required data files (`jokes.txt`, `advices.txt`, `keymap.txt`, `wordquotes.txt`) in the `resources` folder. Execute the `Main` class to start the chatbot.
 
-The project consists of three classes: `Chatbot`, `Quiz`, and `Main`. The `Chatbot` class handles the joke and advice functionalities, as well as communication with the `Quiz` class. The `Quiz` class manages the quiz-related operations, including loading and saving question-answer pairs from the "quiz.txt" file. The `Main` class contains the main method, where the chatbot functionalities are executed and user interactions are facilitated through the console interface.
+This project highlights the use of OOP concepts like encapsulation, abstraction, inheritance, and polymorphism to build a modular, extensible, and maintainable chatbot application.
 
-The project allows users to enjoy random jokes, receive advice, and participate in a quiz by asking questions and contributing answers to expand the knowledge base of the chatbot.
+## - Encapsulation:
+
+The Chatbot class encapsulates the functionality of loading jokes, advices, and quiz answers from files, generating random responses, and saving user-provided quiz answers. It hides the implementation details and provides a public interface for interaction.
+The WordChecker class encapsulates the logic of loading keywords from a file and checking if user input contains any of those keywords. It provides a public method to perform the check and abstracts away the details of file handling and keyword matching.
+
+
+## - Abstraction:
+
+The Chatbot class abstracts the concept of a chatbot by providing high-level methods like getRandomJoke(), getRandomAdvice(), getQuizAnswer(), and saveQuizAnswer(). It allows users to interact with the chatbot without worrying about the underlying implementation details.
+The WordChecker and QuoteChecker classes abstract the concept of checking user input for specific keywords. They provide a simple interface for performing the check without exposing the internal implementation.
+
+## - Inheritance:
+
+The Quiz class extends the Chatbot class, inheriting its properties and methods. It adds specific functionality related to the quiz feature while reusing the existing code from the base class. This demonstrates the principle of code reuse and the ability to extend the functionality of existing classes.
+
+## - Polymorphism:
+
+The Chatbot class uses polymorphism when responding to user input. It determines the type of user input (jokes, advices, quiz) and dynamically selects the appropriate response based on the input. This allows the chatbot to exhibit different behaviors based on the context, showcasing polymorphic behavior.
+These examples highlight how encapsulation, abstraction, inheritance, and polymorphism are employed in the code base to achieve modular, reusable, and extensible design, which are key principles of object-oriented programming.
