@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 import java.io.IOException;
 import java.util.Scanner;
@@ -30,7 +31,15 @@ public class Main {
         String input;
         String name;
 
-        System.out.print("Hi, Good day to you! What is your name? ");
+        String[] greetings = {"gfg", "78j", "fgffg", "978yu"};
+
+        Random random = new Random();
+        int randomGreet = random.nextInt(greetings.length);
+        String randomString = greetings[randomGreet];
+
+        //for (String greet : greetings)
+
+        System.out.print( randomString + " What is your name? ");
         name = scanner.nextLine().trim();
         System.out.println("Hello " + name + "! I am Vinnie the bot.");
 
